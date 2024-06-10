@@ -6,21 +6,22 @@
 
 "use strict"
 
-  const getRandomCatImage = async () => {
-    try {
-  const response = await fetch("https://api.thecatapi.com/v1/images/search")
-  const data = await response.json()
-  const dogImageUrl = data.message
-  console.log(dogImageUrl)
+const getRandomCatImage = async () => {
+  try {
+    const response = await fetch("https://api.thecatapi.com/v1/images/search")
+    const data = await response.json()
+    const catImageUrl = data[0].url
 
-  // Display the image on the webpage
-  const dogImageElement = document.createElement("img")
-  dogImageElement.src = dogImageUrl
-  dogImageElement.alt = "Cat image"
-  document.body.appendChild(catImageElement)
+    console.log(catImageUrl)
+
+    // Display the image on the webpage
+    const catImageElement = document.createElement("img")  // Changed the variable name to catImageElement
+    catImageElement.src = catImageUrl
+    catImageElement.alt = "Cat image"
+    document.body.appendChild(catImageElement)
   } catch (error) {
-  console.log(error)
-    }
+    console.log(error)
   }
+}
 
-  getRandomDogImage()
+getRandomCatImage()

@@ -30,10 +30,13 @@
   font-size: 1.25rem;
 }
 
-img {
-  height: auto;
+.cat-image {
+  display: block;
   width: 250px;
-  float: right;
+  height: 250px;
+  object-fit: cover;
+  /* Ensures the image covers the entire area without distortion */
+  margin: 0 auto;
 }
 
 body {
